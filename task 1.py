@@ -3,3 +3,6 @@ import numpy as np
 
 df = pd.read_csv('random_walk.csv')
 #print(df.head())
+
+df["distance"] = (df["x"]^2 + df["y"]^2)
+print(df)
