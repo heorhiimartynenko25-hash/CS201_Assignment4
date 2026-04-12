@@ -9,4 +9,5 @@ mean = df["distance"].mean()
 print(" Максимальна відстань: ", df["distance"].max(), "\n", "Мінімальна відстань: ", df["distance"].min(), "\n", "Середня відстань: ", mean, "." )
 
 df_filter = df[df["distance"] > mean]
-print(df_filter)
+#print(df_filter)
+df_filter.to_json("filtered_walk.json")
