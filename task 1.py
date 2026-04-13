@@ -19,7 +19,10 @@ plt.plot(df["x"], df["y"], color="green", label="Траєкторія")
 plt.scatter(df.head(1)['x'], df.head(1)['y'], color="blue", label="Start")
 plt.scatter( df.tail(1)['x'], df.tail(1)['y'], color="red", label="End")
 plt.xlabel("x coordinate")
-plt.ylabel("y coordinate", rotation=0, labelpad=10)
+plt.ylabel("y coordinate", rotation=0, labelpad=10) #rotation - параметр повороту тексту
 plt.title("Графік випадкового блукання")
 plt.legend()
+plt.minorticks_on()
+plt.grid(which='major', color='gray', linewidth=0.8)
+plt.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5) #minor - додаткові лінії сітки
 plt.show()
