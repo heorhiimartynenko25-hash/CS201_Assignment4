@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('random_walk.csv')
 #print(df.head())
@@ -10,4 +10,12 @@ print(" Максимальна відстань: ", df["distance"].max(), "\n", 
 
 df_filter = df[df["distance"] > mean]
 #print(df_filter)
-df_filter.to_json("filtered_walk.json")
+
+print(df.tail(1))
+df_filter.to_json("filtered_walk.json", indent=4)
+
+plt.figure(figsize=(8, 6))
+plt.plot(df["x"], df["y"], color="green", label="Траєкторія")
+plt.scatter([df.head(1)['x'], df.tail(1)['x']], [df.head(1)['y'], df.tail(1)['y']], color=["blue", "red"])
+plt.legend()
+plt.show()
